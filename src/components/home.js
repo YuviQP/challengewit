@@ -17,17 +17,17 @@ import { styled } from '@mui/system';
 
 const OuterContainer = styled('div')({
   backgroundColor: "#FFCAD4", 
-  padding: "200px",
+  padding: "20px",
   borderRadius: "50px",
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'self-start',
+  alignItems: 'center',
   minHeight: '100vh', // Para centralizar verticalmente
 });
 
 const InnerContainer = styled(Container)({
   backgroundColor: "#FFFFFF", 
-  padding: "30px",
+  padding: "40px",
   borderRadius: "20px",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
   width: '100%',
@@ -43,6 +43,9 @@ const InputContainer = styled(Box)({
   display: "flex",
   justifyContent: "center",
   marginBottom: "24px",
+  marginLeft:"30px",
+  marginRight:"30px",
+
 });
 
 const TaskList = styled(List)(({ theme }) => ({
@@ -54,6 +57,7 @@ const TaskList = styled(List)(({ theme }) => ({
 const TaskItem = styled(ListItem)({
   display: "flex",
   alignItems: "center",
+  marginBottom: "5px" ,
 });
 
 const TaskText = styled(ListItemText)(({ completed }) => ({
@@ -108,6 +112,7 @@ function Home() {
             fullWidth
             style={{ marginRight: 10 }}
             InputProps={{ style: { height: "56px" } }} 
+            InputProps={{ style: { borderRadius: "10px" } }} 
           />
           <Button
             variant="contained"
