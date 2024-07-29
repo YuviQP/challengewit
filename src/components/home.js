@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
-import CheckBoxIcon from "@mui/icons-material/CheckBox";
-import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
-
 import {
   TextField,
   Button,
@@ -33,7 +30,7 @@ function Home() {
 
   const completeTask = (index) => {
     const updatedTasks = tasks.map((task, i) => {
-      if (i == index) {
+      if (i === index) {
         return { ...task, completed: !task.completed };
       }
       return task;
@@ -42,40 +39,39 @@ function Home() {
   };
 
   const completedCount = tasks.filter((task) => task.completed).length;
-  const progress = tasks.length === 0 ? 0 : (completedCount / tasks.length) * 100;
 
   return (
     <>
-      <Container>
-        <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
-          <Typography variant="h4" align="center">
-            To Do List
-          </Typography>
+      <Container maxWidth="sm" style={{ paddingTop: 20 }}>
+        <Typography variant="h4" align="center" gutterBottom>
+          TODOLIST
+        </Typography>
+
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item xs={12} md={8}>
+            <TextField
+              fullWidth
+              value={newTask}
+              onChange={(e) => setNewTask(e.target.value)}
+              label="ADICIONAR NOVA TAREFA ..."
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={addTask}
+              startIcon={<AddIcon />}
+            />
+          </Grid>
         </Grid>
 
-        <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
-          <TextField
-            value={newTask}
-            onChange={(e) => setNewTask(e.target.value)}
-            label="Adicionar nova tarefa..."
-            variant="outlined"
-            style={{ marginRight: 10 }}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={addTask}
-            startIcon={<AddIcon />}
-          ></Button>
-        </Grid>
         <List>
           {tasks.map((task, index) => (
-            <ListItem key={index}>
-              <IconButton>
-                <Checkbox
-                  checked={task.completed}
-                  onChange={() => completeTask(index)}
-                />
+            <ListItem key={index} divider>
+              <IconButton onClick={() => completeTask(index)}>
+                <Checkbox checked={task.completed} />
               </IconButton>
               <ListItemText
                 primary={task.text}
@@ -89,9 +85,9 @@ function Home() {
             </ListItem>
           ))}
         </List>
-		<Typography variant="h6" style={{ marginTop: 10 }}>
-        Tarefas terminadas: {completedCount} / {tasks.length} 
-      </Typography>
+        <Typography variant="body1" align="center" style={{ marginTop: 20 }}>
+          Tarefas Terminadas {completedCount}/{tasks.length}
+        </Typography>
       </Container>
     </>
   );
