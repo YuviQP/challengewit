@@ -57,7 +57,7 @@ function Home() {
           <TextField
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
-            label="Nuevo Tarea"
+            label="Adicionar nova tarefa..."
             variant="outlined"
             style={{ marginRight: 10 }}
           />
