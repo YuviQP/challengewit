@@ -22,7 +22,6 @@ const themes = createTheme({
       fontFamily: "Roboto, Arial, sans-serif",
     },
   },
-
 });
 
 export default themes;

@@ -1,15 +1,11 @@
 import React from "react";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import Home from "./Home";
-import theme from "./theme"; // Ajuste o caminho conforme necessário
+import Home from "./components/Home";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <div>
       <Home />
-    </ThemeProvider>
+    </div>
   );
 }
 
