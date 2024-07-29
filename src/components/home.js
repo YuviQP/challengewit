@@ -16,8 +16,8 @@ import {
 import { styled } from '@mui/system';
 
 const OuterContainer = styled('div')({
-  backgroundColor: "#FFCAD4", // Fundo vermelho
-  padding: "50px",
+  backgroundColor: "#FFCAD4", 
+  padding: "200px",
   borderRadius: "50px",
   display: 'flex',
   justifyContent: 'center',
@@ -26,16 +26,16 @@ const OuterContainer = styled('div')({
 });
 
 const InnerContainer = styled(Container)({
-  backgroundColor: "#FFFFFF", // Fundo branco
-  padding: "32px",
+  backgroundColor: "#FFFFFF", 
+  padding: "30px",
   borderRadius: "20px",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
   width: '100%',
-  maxWidth: 600,
+  maxWidth: 6000,
 });
 
 const Header = styled(Typography)(({ theme }) => ({
-  marginBottom: theme.spacing(3),
+  marginBottom: theme.spacing(6),
   color: theme.palette.secondary.main,
 }));
 
@@ -47,7 +47,7 @@ const InputContainer = styled(Box)({
 
 const TaskList = styled(List)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
-  padding: theme.spacing(2),
+  padding: theme.spacing(6),
   borderRadius: theme.spacing(1),
 }));
 
@@ -62,7 +62,7 @@ const TaskText = styled(ListItemText)(({ completed }) => ({
 }));
 
 const Footer = styled(Typography)(({ theme }) => ({
-  marginTop: theme.spacing(2),
+  marginTop: theme.spacing(6),
   color: theme.palette.secondary.main,
 }));
 
@@ -96,25 +96,25 @@ function Home() {
     <OuterContainer>
       <InnerContainer maxWidth="sm">
         <Header variant="h4" align="center">
-          TODOLIST
+          ToDoList
         </Header>
 
         <InputContainer>
           <TextField
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
-            label="ADICIONAR NOVA TAREFA ..."
+            label="Add new task ..."
             variant="outlined"
             fullWidth
             style={{ marginRight: 10 }}
-            InputProps={{ style: { height: "56px" } }} // Ajuste de altura
+            InputProps={{ style: { height: "56px" } }} 
           />
           <Button
             variant="contained"
             color="primary"
             onClick={addTask}
             startIcon={<AddIcon />}
-            style={{ height: "56px" }} // Ajuste de altura
+            style={{ height: "56px" }} 
           />
         </InputContainer>
 
