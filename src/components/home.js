@@ -111,8 +111,9 @@ function Home() {
             variant="outlined"
             fullWidth
             style={{ marginRight: 10 }}
-            InputProps={{ style: { height: "56px" } }} 
-            InputProps={{ style: { borderRadius: "10px" } }} 
+            InputProps={{ style: {  height: "56px",
+              borderRadius: "10px" } }} 
+      
           />
           <Button
             variant="contained"

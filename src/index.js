@@ -4,7 +4,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import App from "./App";
 import themes from "./theme/themes"; // Importe o tema que você criou
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <React.StrictMode>
     <ThemeProvider theme={themes}>
       <App />
