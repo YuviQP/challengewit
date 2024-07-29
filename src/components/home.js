@@ -17,18 +17,18 @@ import { styled } from '@mui/system';
 
 const OuterContainer = styled('div')({
   backgroundColor: "#FFCAD4", // Fundo vermelho
-  padding: "32px",
-  borderRadius: "8px",
+  padding: "50px",
+  borderRadius: "50px",
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'self-start',
   minHeight: '100vh', // Para centralizar verticalmente
 });
 
 const InnerContainer = styled(Container)({
   backgroundColor: "#FFFFFF", // Fundo branco
   padding: "32px",
-  borderRadius: "8px",
+  borderRadius: "20px",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
   width: '100%',
   maxWidth: 600,
